@@ -7,6 +7,9 @@ import {
   FaDownload,
   FaEnvelope,
 } from "react-icons/fa";
+import myProfileImage from "../assets/akash.png";
+import resumePDF from '../assets/akash-resume.pdf';
+
 
 const Home = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -47,26 +50,16 @@ const Home = () => {
   };
 
   const handleDownloadResume = (e) => {
-    e.preventDefault();
-    const link = document.createElement("a");
-    const publicUrl = window.location.origin;
-    link.href = `${publicUrl}/akash-resume.pdf`;
-    link.download = "akash-resume.pdf";
+  e.preventDefault();
 
-    fetch(link.href)
-      .then((response) => {
-        if (response.ok) {
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } else {
-          alert("Resume file not found. Please contact me directly.");
-        }
-      })
-      .catch(() => {
-        alert("Resume file not found. Please contact me directly.");
-      });
-  };
+  const link = document.createElement("a");
+  link.href = resumePDF;
+  link.download = "akash-resume.pdf";
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   const particles = useMemo(() => {
     return [...Array(20)].map(() => ({
@@ -145,7 +138,7 @@ const Home = () => {
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-sm bg-white/10">
                 {!imageError ? (
                   <img
-                    src="/akash.png"
+                    src={myProfileImage}
                     alt="Akash Tripathi - Full Stack Developer"
                     className={`w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-110 ${
                       imageLoaded ? "opacity-100" : "opacity-0"

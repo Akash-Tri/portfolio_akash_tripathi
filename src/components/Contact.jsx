@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import resumePDF from '../assets/akash-resume.pdf';
 
 // Custom SVG Icons
 const MailIcon = () => (
@@ -197,8 +197,7 @@ const Contact = () => {
 
             {/* Resume Download */}
             <a
-              href="/akash-resume.pdf"
-              download
+              href={resumePDF} download="akash-resume.pdf"
               className="block w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-purple-500/25 group"
             >
               <div className="flex items-center justify-center space-x-3">

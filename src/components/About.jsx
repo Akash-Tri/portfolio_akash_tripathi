@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaGraduationCap, FaBriefcase, FaCode, FaHeart } from "react-icons/fa";
+import myFirstImage from "../assets/img1.jpg";
+import mySecondImage from "../assets/img2.jpg";
 
 const About = () => {
   const [readMore, setReadMore] = useState(false);
@@ -86,7 +88,7 @@ const About = () => {
               {/* Main Image Container */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/img2.jpg"
+                  src={mySecondImage}
                   alt="About Akash"
                   className="w-full h-96 md:h-[500px] object-cover object-center"
                 />
@@ -96,7 +98,7 @@ const About = () => {
               {/* Second Image - Positioned as overlay */}
               <div className="absolute -top-6 -left-6 w-32 h-40 md:w-40 md:h-48 overflow-hidden rounded-xl shadow-xl border-4 border-white transform group-hover:-translate-y-2 transition-transform duration-500">
                 <img
-                  src="/img1.jpg"
+                  src={myFirstImage}
                   alt="About Akash Profile"
                   className="w-full h-full object-cover object-center"
                 />
