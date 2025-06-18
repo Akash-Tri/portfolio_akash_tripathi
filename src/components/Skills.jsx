@@ -168,7 +168,7 @@ const Skills = () => {
           {[
             { label: "Technologies", count: skillsData.reduce((acc, item) => acc + item.skills.length, 0) },
             { label: "Categories", count: skillsData.length },
-            { label: "Years Experience", count: "3+" }
+            { label: "Months Experience", count: "5+" }
           ].map((stat, index) => (
             <div
               key={stat.label}
